@@ -175,41 +175,41 @@ button.addEventListener('click',function() {
 
 
                 if (mainWeather1 == 'Clear') {
-                    weatherIMG1.setAttribute('src','../img/sunny.png')
+                    weatherIMG1.setAttribute(src="../img/sunny.png")
                     weatherIMG1.setAttribute('width', '80px')
                 } else {
-                    weatherIMG1.setAttribute('src', '../img/cloudy.png')
+                    weatherIMG1.setAttribute(src="../img/sunny.png")
                     weatherIMG1.setAttribute('width', '80px')
                 }
 
                 if (mainWeather2 == 'Clear') {
-                    weatherIMG2.setAttribute('src','../img/sunny.png')
+                    weatherIMG2.setAttribute(src="../img/sunny.png")
                     weatherIMG2.setAttribute('width', '80px')
                 } else {
-                    weatherIMG2.setAttribute('src', '../img/cloudy.png')
+                    weatherIMG2.setAttribute(src="../img/sunny.png")
                     weatherIMG2.setAttribute('width', '80px')
                 }
                 
                 if (mainWeather3 == 'Clear') {
-                    weatherIMG3.setAttribute('src','../img/sunny.png')
+                    weatherIMG3.setAttribute(src="../img/sunny.png")
                     weatherIMG3.setAttribute('width', '80px')
                 } else {
-                    weatherIMG3.setAttribute('src', '../img/cloudy.png')
+                    weatherIMG3.setAttribute(src="../img/sunny.png")
                     weatherIMG3.setAttribute('width', '80px')
                 }
                 
                 if (mainWeather4 == 'Clear') {
-                    weatherIMG4.setAttribute('src','../img/sunny.png')
+                    weatherIMG4.setAttribute(src="../img/sunny.png")
                     weatherIMG4.setAttribute('width', '80px')
                 } else {
-                    weatherIMG4.setAttribute('src', '../img/cloudy.png')
+                    weatherIMG4.setAttribute(src="../img/sunny.png")
                     weatherIMG4.setAttribute('width', '80px')}
                 
                 if (mainWeather5 == 'Clear') {
-                    weatherIMG5.setAttribute('src','../img/sunny.png')
+                    weatherIMG5.setAttribute(src="../img/sunny.png")
                     weatherIMG5.setAttribute('width', '80px')
                 } else {
-                    weatherIMG5.setAttribute('src', '../img/cloudy.png')
+                    weatherIMG5.setAttribute(src="../img/sunny.png")
                     weatherIMG5.setAttribute('width', '80px')
                 }
 
@@ -331,41 +331,41 @@ button.addEventListener('click',function() {
                     }
 
                     if (mainWeather1 == 'Clear') {
-                        weatherIMG1.setAttribute('src','../img/sunny.png')
+                        weatherIMG1.setAttribute(src="../img/sunny.png")
                         weatherIMG1.setAttribute('width', '80px')
                     } else {
-                        weatherIMG1.setAttribute('src', '../img/cloudy.png')
+                        weatherIMG1.setAttribute(src="../img/sunny.png")
                         weatherIMG1.setAttribute('width', '80px')
                     }
 
                     if (mainWeather2 == 'Clear') {
-                        weatherIMG2.setAttribute('src','../img/sunny.png')
+                        weatherIMG2.setAttribute(src="../img/sunny.png")
                         weatherIMG2.setAttribute('width', '80px')
                     } else {
-                        weatherIMG2.setAttribute('src', '../img/cloudy.png')
+                        weatherIMG2.setAttribute(src="../img/sunny.png")
                         weatherIMG2.setAttribute('width', '80px')
                     }
                     
                     if (mainWeather3 == 'Clear') {
-                        weatherIMG3.setAttribute('src','../img/sunny.png')
+                        weatherIMG3.setAttribute(src="../img/sunny.png")
                         weatherIMG3.setAttribute('width', '80px')
                     } else {
-                        weatherIMG3.setAttribute('src', '../img/cloudy.png')
+                        weatherIMG3.setAttribute(src="../img/sunny.png")
                         weatherIMG3.setAttribute('width', '80px')
                     }
                     
                     if (mainWeather4 == 'Clear') {
-                        weatherIMG4.setAttribute('src','../img/sunny.png')
+                        weatherIMG4.setAttribute(src="../img/sunny.png")
                         weatherIMG4.setAttribute('width', '80px')
                     } else {
-                        weatherIMG4.setAttribute('src', '../img/cloudy.png')
+                        weatherIMG4.setAttribute(src="../img/sunny.png")
                         weatherIMG4.setAttribute('width', '80px')}
                     
                     if (mainWeather5 == 'Clear') {
-                        weatherIMG5.setAttribute('src','../img/sunny.png')
+                        weatherIMG5.setAttribute(src="../img/sunny.png")
                         weatherIMG5.setAttribute('width', '80px')
                     } else {
-                        weatherIMG5.setAttribute('src', '../img/cloudy.png')
+                        weatherIMG5.setAttribute(src="../img/sunny.png")
                         weatherIMG5.setAttribute('width', '80px')
                     }
 

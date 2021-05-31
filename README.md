@@ -15,4 +15,8 @@ Humidity:
 
 UV Index:
 
-# weather-app
+REPOSITORY LINK:
+https://github.com/Rey79-coder/weather-app
+
+LIVE URL:
+https://rey79-coder.github.io/weather-app/
