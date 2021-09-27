@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
     <title>Weather Application</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
 
-<body>
+<body onload="DefaultScreen()">
     <center>
-        <h1 id="Para1">Weather Forecast</h1>
+        <h1 id="Para1">Weather Forecast 5 Days</h1>
         <p id="inputContainer">City: <input type="text" id="cityInput"> </p>
-        <button>Click Me</button>>
+        <button type="button" onclick="GetInfo()">Click Me</button>
         <h2 id="cityName">--London--</h2>
     </center>
 
@@ -33,41 +32,34 @@
 
             <div class="icons">
                 <p class="weather" id="day2"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img1" alt=""></div>
+                <div class="image"><img src="dots.png" class="imgClass" id="img2" alt=""></div>
                 <p class="minValues" id="day2Min">Loading...</p>
                 <p class="maxValues" id="day2Max">Loading...</p>
             </div>
 
             <div class="icons">
                 <p class="weather" id="day3"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img1" alt=""></div>
+                <div class="image"><img src="dots.png" class="imgClass" id="img3" alt=""></div>
                 <p class="minValues" id="day3Min">Loading...</p>
                 <p class="maxValues" id="day3Max">Loading...</p>
             </div>
 
             <div class="icons">
                 <p class="weather" id="day4"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img1" alt=""></div>
+                <div class="image"><img src="dots.png" class="imgClass" id="img4" alt=""></div>
                 <p class="minValues" id="day4Min">Loading...</p>
                 <p class="maxValues" id="day4Max">Loading...</p>
             </div>
 
             <div class="icons">
                 <p class="weather" id="day5"></p>
-                <div class="image"><img src="dots.png" class="imgClass" id="img1" alt=""></div>
+                <div class="image"><img src="dots.png" class="imgClass" id="img5" alt=""></div>
                 <p class="minValues" id="day5Min">Loading...</p>
                 <p class="maxValues" id="day5Max">Loading...</p>
             </div>
         </div>
     </div>
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/weather.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
