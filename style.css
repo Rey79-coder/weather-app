@@ -38,7 +38,7 @@
 
 .icons{
     display: inline-block;
-    /* float: left; */
+    float: left;
     height: 200px;
     width: 190px;
     margin: 20px;
