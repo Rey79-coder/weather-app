@@ -50,6 +50,7 @@ function GetInfo() {
     function DefaultScreen() {
         document.getElementById("cityInput").defaultValue = "Mexico";
         GetInfo();
+
     }
 
     const d = new Date();
@@ -63,6 +64,7 @@ function GetInfo() {
             return day + d.getDay();
         }
     }
+    
 
     for (i = 0; i < 5; i++) {
         document.getElementById("day" + (i + 1)).innerHTML = weekday[CheckDay(i)];
