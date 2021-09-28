@@ -30,7 +30,7 @@ const saveSearch = function () {
 };
 
 const getCityWeather = function (city) {
-    const apiKey = "844421298d794574c100e3409cee0499"
+    const apiKey = "593c1929abed320b8081e98e1d74384f"
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
     fetch(apiURL)
@@ -83,7 +83,7 @@ const displayWeather = function (weather, searchCity) {
     getUvIndex(lat, lon)
 }
 const getUvIndex = function (lat, lon) {
-    const apiKey = "844421298d794574c100e3409cee0499"
+    const apiKey = "593c1929abed320b8081e98e1d74384f"
     const apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
     fetch(apiURL)
         .then(function (response) {
@@ -117,7 +117,7 @@ const displayUvIndex = function (index) {
     weatherContainerEl.appendChild(uvIndexEl);
 }
 const get5Day = function (city) {
-    const apiKey = "844421298d794574c100e3409cee0499"
+    const apiKey = "593c1929abed320b8081e98e1d74384f"
     const apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
 
     fetch(apiURL)
@@ -133,7 +133,7 @@ const display5Day = function (weather) {
     forecastTitle.textContent = "5-Day Forecast:";
 
     const forecast = weather.list;
-    for (const i = 5; i < forecast.length; i = i + 8) {
+    for (var i = 5; i < forecast.length; i = i + 8) {
         const dailyForecast = forecast[i];
 
 
