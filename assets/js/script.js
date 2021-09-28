@@ -1,72 +1,70 @@
-localStorage.setItem("key", "value");
+const cities = [];
 
-function GetInfo() {
-    const newName = document.getElementById("cityInput");
-    const cityName = document.getElementById("cityName");
-    cityName.innerHTML = "--" + newName.value + "--";
+const cityFormEl=document.querySelector("#city-search-form");
+const cityInputEl=document.querySelector("#city");
+const weatherContainerEl=document.querySelector("#current-weather-container");
+const citySearchInputEl = document.querySelector("#searched-city");
+const forecastTitle = document.querySelector("#forecast");
+const forecastContainerEl = document.querySelector("#fiveday-container");
+const pastSearchButtonEl = document.querySelector("#past-search-buttons");
 
-
-    fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + newName.value + '&appid=593c1929abed320b8081e98e1d74384f')
-        .then(response => response.json())
-        .then(data => {
-
-            // TO GET MIN AND MAX TEMP
-            for (i = 0; i < 5; i++) {
-                document.getElementById("day" + (i + 1) + "Min").innerHTML = "Min: " + Number(data.list[i].main.temp_min - 305.83).toFixed(1) + "°";
-            }
-
-            for (i = 0; i < 5; i++) {
-                document.getElementById("day" + (i + 1) + "Max").innerHTML = "Max: " + Number(data.list[i].main.temp_max - 305.83).toFixed(2) + "°";
-            }
-
-            // TO GET ICONS
-            for (i = 0; i < 5; i++) {
-                document.getElementById("img" + (i + 1)).src = "http://openweathermap.org/img/wn/" +
-                    data.list[i].weather[0].icon
-                    + ".png";
-                // console.log(data) 
-            }
-
-            // TO GET HUMIDITY
-            for (i = 0; i < 5; i++) {
-                document.getElementById("day" + (i + 1) + "Hum").innerHTML = "Humidity: " + Number(data.list[i].main.humidity, 90).toFixed(1) + "°";
-            }
-
-            // TO GET WIND SPEED
-            for (i = 0; i < 5; i++) {
-                document.getElementById("day" + (i + 1) + "Wind").innerHTML = "Speed: " + Number(data.list[i].wind.speed, 0.66).toFixed(1) + "°";
-            }
-
-        })
-
-        // window.onerror = function () {
-        //     alert("An error occurred.");
-        //  }
-
-
-    .catch(err => alert("Something went wrong"))
+// TO SUBMIT/REQUEST WEATHER OF THE PLACE
+const formSumbitHandler = function(event){
+    event.preventDefault();
+    const city = cityInputEl.value.trim();
+    if(city){
+        getCityWeather(city);
+        get5Day(city);
+        cities.unshift({city});
+        cityInputEl.value = "";
+    } else{
+        alert("Please enter a City");
     }
+    saveSearch();
+    pastSearch(city);
+}
 
-    function DefaultScreen() {
-        document.getElementById("cityInput").defaultValue = "Mexico";
-        GetInfo();
+// TO SAVE IT IN THE LOCAL STORAGE
+const saveSearch = function(){
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
 
-    }
+const getCityWeather = function(city){
+    const apiKey = "844421298d794574c100e3409cee0499"
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
 
-    const d = new Date();
-    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+            displayWeather(data, city);
+        });
+    });
+};
 
-    function CheckDay(day) {
-        if (day + d.getDay() > 6) {
-            return day + d.getDay() - 7;
-        }
-        else {
-            return day + d.getDay();
-        }
-    }
-    
+const displayWeather = function(weather, searchCity){
+   //TO CLEAR OLD REQUESTS
+   weatherContainerEl.textContent= "";  
+   citySearchInputEl.textContent=searchCity;
 
-    for (i = 0; i < 5; i++) {
-        document.getElementById("day" + (i + 1)).innerHTML = weekday[CheckDay(i)];
-    }
-// }
+
+   //CRETATE CURRENT DATE
+   const currentDate = document.createElement("span")
+   currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
+   citySearchInputEl.appendChild(currentDate);
+
+   //CREATE AN ICON
+   const weatherIcon = document.createElement("img")
+   weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+   citySearchInputEl.appendChild(weatherIcon);
+
+   //SPAN TO HOLD MIN AND MAX TEMP
+const temperatureEl = document.createElement("span");
+   temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
+   temperatureEl.classList = "list-group-item"
+  
+   //SPAN TO HOLD HUMIDITY
+const humidityEl = document.createElement("span");
+   humidityEl.textContent = "Humidity: " + weather.main.humidity + " %";
+   humidityEl.classList = "list-group-item"
+
+}
